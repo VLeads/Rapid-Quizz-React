@@ -6,7 +6,7 @@
 Unlocking knowledge at RAPID speed !
 
 ![Forks](https://img.shields.io/github/forks/vleads/rapid-quiz)
-![Stars](https://img.shields.io/github/stars/vleads/rapid-quiz)
+![Stars](https://img.shields.io/github/stars/vleads/rapid-quizz-react)
 
 </div>
 
