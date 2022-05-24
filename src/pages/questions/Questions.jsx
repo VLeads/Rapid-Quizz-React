@@ -16,11 +16,23 @@ export const Questions = () => {
   const [myQuizData, setMyQuizData] = useState();
 
   useEffect(() => {
-    setMyQuizData(quizData.filter((el) => el._id === quizId));
+    setMyQuizData(
+      quizData.find(function (el) {
+        return el._id == quizId;
+      })
+    );
   }, []);
 
   const questions = myQuizData?.questions;
-  console.log("ques", myQuizData, quizData, quizId);
+  console.log(
+    "ques",
+    myQuizData,
+    quizData,
+    quizId,
+    quizData.find(function (el) {
+      return el._id == quizId;
+    })
+  );
 
   let question = { question: "", options: [] };
 
@@ -86,9 +98,8 @@ export const Questions = () => {
             {question.options.map((el, index) => {
               return (
                 <div onClick={() => setActiveButton(index)}>
-                  <input type="radio" id="option1" />
+                  <input type="radio" />
                   <label
-                    for="option1"
                     className={`option ${
                       index === Number(activeButton) ? " option-active" : ""
                     }`}
