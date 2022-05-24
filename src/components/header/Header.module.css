@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto&display=swap');
+
+.quizNavbar {
+    width: 80vw;
+    padding: 4rem;
+}
+
+.quizNavbarText {
+    font-size: 6rem
+}
+
+.logo {
+    position: relative;
+}
+
+.fontFamilyKaushan {
+    font-family: 'Kaushan Script', cursive;
+    color: var(--primary-color)
+}
+
+.quizNavbarText:after {
+    position: absolute;
+    content: "";
+    top: 0.7rem;
+    left: -0.7rem;
+    width: 4rem;
+    height: 4rem;
+    border-left: 4px solid var(--red);
+    border-bottom: 4px solid var(--red);
+}
+
+.quizNavbarText:after:after {
+    position: absolute;
+    content: "";
+    top: 1.5rem;
+    left: -0.8rem;
+    width: 4rem;
+    height: 4rem;
+    border-left: 4px solid var(--red);
+    border-bottom: 4px solid var(--red);
+}

@@ -1,0 +1,21 @@
+.footer {
+    padding-bottom: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--grey)
+}
+
+.footer>a {
+    padding: 0 2rem
+}
+
+.footer>a>i {
+    font-size: 3rem;
+}
+
+.footerHeader {
+    font-weight: 600
+}
+
+.footer>a>i:hover {
+    color: #383838
+}
