@@ -1,0 +1,16 @@
+:root {
+    --light-background: #f4f3fc;
+    --light-background-hover: #e5e2f7;
+    --white: #f8f8f8;
+    --red: #e62d2d;
+}
+
+body {
+    width: 70%;
+    margin: auto;
+    background-color: var(--xlight-blue);
+}
+
+a {
+    text-decoration: none;
+}

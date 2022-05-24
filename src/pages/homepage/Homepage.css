@@ -1,0 +1,44 @@
+.quiz-main-container {
+    padding-top: 3rem
+}
+
+.quiz-main-container>h2 {
+    text-align: center
+}
+
+.category-heading {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-top: 7rem;
+    margin-bottom: 5rem;
+}
+
+.category-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+}
+
+.card-vertical {
+    height: 38rem;
+    cursor: pointer;
+}
+
+.card-vertical>img {
+    object-fit: cover;
+    height: 20rem
+}
+
+.card-header {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-dark-color);
+    border-bottom: 1px solid var(--grey);
+}
+
+.card-desc {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem
+}

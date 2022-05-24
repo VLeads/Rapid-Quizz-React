@@ -1,0 +1,35 @@
+.rules-main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+}
+
+.rules-card {
+    width: 45rem;
+    height: 45rem
+}
+
+.rules-card>img {
+    width: 20rem;
+    height: 12rem;
+    margin: auto;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.rules-main {
+    padding: 2rem;
+    font-size: 1.8rem;
+    word-wrap: break-word;
+    list-style: none;
+}
+
+.rule {
+    padding-bottom: 2rem;
+}
+
+.start-btn {
+    display: flex;
+    margin: auto
+}
