@@ -3,119 +3,118 @@ import tech from "assets/img/tech.jpg";
 
 export const quizData = [
   {
-    _id: 1,
+    _id: 0,
     heading: "Cosmos",
     desc: " Want to explore the world of cosmos or to test your knowledge. Then this is for you !",
 
     src: cosmos,
     questions: [
       {
-        question: "Cosmos is mainly concerned with :",
-        point: 5,
+        question: " 1 Cosmos is mainly concerned with :",
         options: [
           {
             value: "Formation of Planets",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Stars",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Universe",
-            isRight: true,
+            isCorrect: true,
           },
           {
             value: "Formation of Black holes",
-            isRight: false,
+            isCorrect: false,
           },
         ],
       },
       {
-        question: "Cosmos is mainly concerned with :",
-        point: 5,
+        question: "2 Cosmos is mainly concerned with :",
+
         options: [
           {
             value: "Formation of Planets",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Stars",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Universe",
-            isRight: true,
+            isCorrect: true,
           },
           {
             value: "Formation of Black holes",
-            isRight: false,
+            isCorrect: false,
           },
         ],
       },
       {
-        question: "Cosmos is mainly concerned with :",
-        point: 5,
+        question: "3 Cosmos is mainly concerned with :",
+
         options: [
           {
             value: "Formation of Planets",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Stars",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Universe",
-            isRight: true,
+            isCorrect: true,
           },
           {
             value: "Formation of Black holes",
-            isRight: false,
+            isCorrect: false,
           },
         ],
       },
       {
-        question: "Cosmos is mainly concerned with :",
-        point: 5,
+        question: "4 Cosmos is mainly concerned with :",
+
         options: [
           {
             value: "Formation of Planets",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Stars",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Universe",
-            isRight: true,
+            isCorrect: true,
           },
           {
             value: "Formation of Black holes",
-            isRight: false,
+            isCorrect: false,
           },
         ],
       },
       {
-        question: "Cosmos is mainly concerned with :",
-        point: 5,
+        question: "5 Cosmos is mainly concerned with :",
+
         options: [
           {
             value: "Formation of Planets",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Stars",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Universe",
-            isRight: true,
+            isCorrect: true,
           },
           {
             value: "Formation of Black holes",
-            isRight: false,
+            isCorrect: false,
           },
         ],
       },
@@ -129,112 +128,112 @@ export const quizData = [
     src: tech,
     questions: [
       {
-        question: "Cosmos is mainly concerned with :",
-        point: 5,
+        question: "1. Why is firewall mainly used in computers :",
+
         options: [
           {
-            value: "Formation of Planets",
-            isRight: false,
+            value: "Monitoring",
+            isCorrect: false,
           },
           {
-            value: "Formation of Stars",
-            isRight: false,
+            value: "Security",
+            isCorrect: true,
           },
           {
-            value: "Formation of Universe",
-            isRight: true,
+            value: "Authentication",
+            isCorrect: false,
           },
           {
-            value: "Formation of Black holes",
-            isRight: false,
+            value: "Data transmission",
+            isCorrect: false,
           },
         ],
       },
       {
-        question: "Cosmos is mainly concerned with :",
-        point: 5,
+        question: "2. The full form of DOM is :",
+
         options: [
           {
-            value: "Formation of Planets",
-            isRight: false,
+            value: "Document Object Model",
+            isCorrect: true,
           },
           {
-            value: "Formation of Stars",
-            isRight: false,
+            value: "Document Object Memory",
+            isCorrect: false,
           },
           {
-            value: "Formation of Universe",
-            isRight: true,
+            value: "Document Oriented Memory",
+            isCorrect: false,
           },
           {
-            value: "Formation of Black holes",
-            isRight: false,
+            value: "None of the above",
+            isCorrect: false,
           },
         ],
       },
       {
-        question: "Cosmos is mainly concerned with :",
-        point: 5,
+        question: "3 Cosmos is mainly concerned with :",
+
         options: [
           {
             value: "Formation of Planets",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Stars",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Universe",
-            isRight: true,
+            isCorrect: true,
           },
           {
             value: "Formation of Black holes",
-            isRight: false,
+            isCorrect: false,
           },
         ],
       },
       {
-        question: "Cosmos is mainly concerned with :",
-        point: 5,
+        question: "4 Cosmos is mainly concerned with :",
+
         options: [
           {
             value: "Formation of Planets",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Stars",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Universe",
-            isRight: true,
+            isCorrect: true,
           },
           {
             value: "Formation of Black holes",
-            isRight: false,
+            isCorrect: false,
           },
         ],
       },
       {
-        question: "Cosmos is mainly concerned with :",
-        point: 5,
+        question: "5 Cosmos is mainly concerned with :",
+
         options: [
           {
             value: "Formation of Planets",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Stars",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Universe",
-            isRight: true,
+            isCorrect: true,
           },
           {
             value: "Formation of Black holes",
-            isRight: false,
+            isCorrect: false,
           },
         ],
       },
@@ -248,112 +247,112 @@ export const quizData = [
     src: cosmos,
     questions: [
       {
-        question: "Cosmos is mainly concerned with :",
-        point: 5,
+        question: "1Cosmos is mainly concerned with :",
+
         options: [
           {
             value: "Formation of Planets",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Stars",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Universe",
-            isRight: true,
+            isCorrect: true,
           },
           {
             value: "Formation of Black holes",
-            isRight: false,
+            isCorrect: false,
           },
         ],
       },
       {
-        question: "Cosmos is mainly concerned with :",
-        point: 5,
+        question: "2 Cosmos is mainly concerned with :",
+
         options: [
           {
             value: "Formation of Planets",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Stars",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Universe",
-            isRight: true,
+            isCorrect: true,
           },
           {
             value: "Formation of Black holes",
-            isRight: false,
+            isCorrect: false,
           },
         ],
       },
       {
-        question: "Cosmos is mainly concerned with :",
-        point: 5,
+        question: "3 Cosmos is mainly concerned with :",
+
         options: [
           {
             value: "Formation of Planets",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Stars",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Universe",
-            isRight: true,
+            isCorrect: true,
           },
           {
             value: "Formation of Black holes",
-            isRight: false,
+            isCorrect: false,
           },
         ],
       },
       {
-        question: "Cosmos is mainly concerned with :",
-        point: 5,
+        question: "4 Cosmos is mainly concerned with :",
+
         options: [
           {
             value: "Formation of Planets",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Stars",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Universe",
-            isRight: true,
+            isCorrect: true,
           },
           {
             value: "Formation of Black holes",
-            isRight: false,
+            isCorrect: false,
           },
         ],
       },
       {
-        question: "Cosmos is mainly concerned with :",
-        point: 5,
+        question: "5 Cosmos is mainly concerned with :",
+
         options: [
           {
             value: "Formation of Planets",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Stars",
-            isRight: false,
+            isCorrect: false,
           },
           {
             value: "Formation of Universe",
-            isRight: true,
+            isCorrect: true,
           },
           {
             value: "Formation of Black holes",
-            isRight: false,
+            isCorrect: false,
           },
         ],
       },

@@ -7,7 +7,7 @@
 .ques {
     padding: 2rem;
     width: 60rem;
-    height: 53rem;
+    height: auto;
 }
 
 .ques>a {
@@ -51,6 +51,7 @@
     padding: 1.8rem;
     cursor: pointer;
     margin-bottom: 1rem;
+    list-style: none;
     border-radius: 8px;
 }
 
