@@ -22,11 +22,11 @@ const Header = () => {
       <div className={styles.navOption}>
         {theme === "dark" ? (
           <div>
-            <MoonIcon className={styles.darkmode} onClick={changeTheme} />
+            <SunIcon className={styles.lightmode} onClick={changeTheme} />
           </div>
         ) : (
           <div>
-            <SunIcon className={styles.lightmode} onClick={changeTheme} />
+            <MoonIcon className={styles.darkmode} onClick={changeTheme} />
           </div>
         )}
 
