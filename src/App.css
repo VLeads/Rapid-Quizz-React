@@ -1,16 +1,32 @@
-:root {
+/* :root {
     --light-background: #f4f3fc;
     --light-background-hover: #e5e2f7;
     --white: #f8f8f8;
     --red: #e62d2d;
+} */
+
+html {
+    font-size: 62.5%;
 }
 
 body {
-    width: 70%;
-    margin: auto;
-    background-color: var(--xlight-blue);
+    font-size: 1.6rem;
+    width: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color)
 }
 
 a {
     text-decoration: none;
+}
+
+.page-layout {
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+}
+
+.page-wrapper {
+    max-width: 110rem;
+    margin: auto;
 }

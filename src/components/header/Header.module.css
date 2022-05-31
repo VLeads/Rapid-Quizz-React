@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto&display=swap');
 
 .quizNavbar {
-    width: 80vw;
+    width: 100%;
     padding: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .quizNavbarText {
@@ -38,4 +41,40 @@
     height: 4rem;
     border-left: 4px solid var(--red);
     border-bottom: 4px solid var(--red);
+}
+
+.navOption {
+    font-size: 3rem;
+    display: flex;
+}
+
+.icon {
+    cursor: pointer;
+    color: var(--primary-dark-color);
+}
+
+.logoutIcon {
+    cursor: pointer;
+    color: #f6480e;
+}
+
+.lightmode {
+    margin-right: 3rem;
+    cursor: pointer;
+    color: #d9d90e
+}
+
+.darkmode {
+    color: #f4f4f4;
+    margin-right: 3rem;
+    cursor: pointer;
+}
+
+
+.icon:hover,
+.logoutIcon:hover,
+.darkmode:hover,
+.lightmode:hover {
+    font-size: 3.2rem;
+    transition: linear 0.5ms
 }

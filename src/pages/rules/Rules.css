@@ -5,6 +5,10 @@
     padding: 4rem;
 }
 
+.theme-color {
+    background-color: var(--secondary-background-color);
+}
+
 .rules-card {
     width: 45rem;
     height: 45rem

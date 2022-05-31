@@ -64,7 +64,7 @@ export const Questions = () => {
 
   return (
     <main className="quiz-container">
-      <div className="card-vertical ques">
+      <div className="card-vertical ques theme-color">
         <h2 className="justify-center">{myQuizData?.heading}</h2>
         <div className="ques-and-score">
           <div className="count">
