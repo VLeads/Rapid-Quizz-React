@@ -22,12 +22,10 @@ const Header = () => {
       <div className={styles.navOption}>
         {theme === "dark" ? (
           <div>
-            {console.log("dark")}
             <MoonIcon className={styles.darkmode} onClick={changeTheme} />
           </div>
         ) : (
           <div>
-            {console.log("light")}
             <SunIcon className={styles.lightmode} onClick={changeTheme} />
           </div>
         )}

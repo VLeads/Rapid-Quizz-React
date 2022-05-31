@@ -44,7 +44,7 @@ export const Login = () => {
         const userRef = doc(db, "users", response.user.uid);
 
         const getUserData = await getDoc(userRef); //to read data
-        console.log("getData", getUserData.data());
+
         localStorage.setItem("user", JSON.stringify(getUserData.data()));
 
         setUser(getUserData.data());

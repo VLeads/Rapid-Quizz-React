@@ -4,7 +4,6 @@ import { QuizCategory } from "./component/QuizCategory";
 import { quizData } from "data/quiz-data";
 
 const Homepage = () => {
-  console.log("test");
   return (
     <main className="quiz-main-container">
       <h2>

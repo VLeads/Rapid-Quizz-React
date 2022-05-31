@@ -47,8 +47,6 @@ export const Signup = () => {
 
           await setDoc(userRef, currentUser);
 
-          console.log("signup", response);
-
           localStorage.setItem("user", JSON.stringify(currentUser));
           setUser(currentUser);
           toast.success(` Welcome ${firstName} `);
