@@ -1,0 +1,7 @@
+export const actionConstants = {
+  SET_CURRQUE: "SET_CURRQUE",
+  SET_ANSWERS: "SET_ANSWERS",
+  UPDATE_USER: "UPDATE_USER",
+  START_QUIZ: "START_QUIZ",
+  RESET: "RESET",
+};

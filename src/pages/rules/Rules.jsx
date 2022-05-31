@@ -1,27 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Rules.css";
 import ruleImg from "assets/img/rules.png";
 import { quizData } from "data/quiz-data";
 import { Link, useParams } from "react-router-dom";
+import { useQuiz } from "context/data-context";
+import { actionConstants } from "context/actionConstants";
 
 export const Rules = () => {
-  const { quizId } = useParams();
+  const currQuiz = sessionStorage.getItem("currQuiz");
 
-  const myQuizData = quizData.find((el) => el._id);
+  const { quizDispatch } = useQuiz();
+
+  const { START_QUIZ } = actionConstants;
+
+  useEffect(() => {
+    quizDispatch({ type: START_QUIZ });
+  }, []);
 
   return (
-    <main class="rules-main-container">
-      <div class="card-vertical rules-card">
+    <main className="rules-main-container">
+      <div className="card-vertical rules-card">
         <img src={ruleImg} alt="" />
-        <h3 class="justify-center">Rules to be followed</h3>
-        <ul class="rules-main">
-          <li class="rule">💪 &nbsp You will face 5 Questions</li>
-          <li class="rule">💎 &nbsp The right answer will give you 2 points</li>
-          <li class="rule">😄 &nbsp There is no negative marking</li>
-          <li class="rule">🏆 &nbsp Score atleast 70% to win.</li>
+        <h3 className="justify-center">Rules to be followed</h3>
+        <ul className="rules-main">
+          <li className="rule">💪 &nbsp; You will face 5 Questions</li>
+          <li className="rule">
+            💎 &nbsp; The right answer will give you 10 points
+          </li>
+          <li className="rule">😄 &nbsp; There is no negative marking</li>
+          <li className="rule">🏆 &nbsp; Score atleast 70% to win.</li>
         </ul>
-        <Link to={`/${quizId}/1`}>
-          <button class="btn btn-primary start-btn">Start Quiz</button>
+        <Link to={`/questions/${currQuiz}`}>
+          <button className="btn btn-primary start-btn">Start Quiz</button>
         </Link>
       </div>
     </main>

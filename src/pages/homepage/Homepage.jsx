@@ -1,8 +1,5 @@
 import React from "react";
 import "./Homepage.css";
-import { Footer, Header } from "components";
-import cosmos from "assets/img/cosmos.jpg";
-import tech from "assets/img/tech.jpg";
 import { QuizCategory } from "./component/QuizCategory";
 import { quizData } from "data/quiz-data";
 

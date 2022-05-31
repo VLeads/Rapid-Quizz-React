@@ -1,120 +1,121 @@
+import { actionConstants } from "context/actionConstants";
 import { useQuiz } from "context/data-context";
+import { useTimer } from "customHooks/useTimer";
 import { quizData } from "data/quiz-data";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./Questions.css";
 
 export const Questions = () => {
-  const { questionIndex, quizId } = useParams();
-
-  const [activeButton, setActiveButton] = useState(-1);
-
-  const { state, dispatch } = useQuiz();
-
   const navigate = useNavigate();
 
+  const { quizId } = useParams();
+
+  const [selectedOption, setSelectedOption] = useState([]);
+
+  const {
+    quizState: { currQuestion },
+    quizDispatch,
+  } = useQuiz();
+
   const [myQuizData, setMyQuizData] = useState();
+
+  const { SET_CURRQUE, SET_ANSWERS } = actionConstants;
+
+  const { timerSec, timerMin, sec } = useTimer();
 
   useEffect(() => {
     setMyQuizData(
       quizData.find(function (el) {
-        return el._id == quizId;
+        return el?._id === Number(quizId);
       })
     );
   }, []);
 
   const questions = myQuizData?.questions;
-  console.log(
-    "ques",
-    myQuizData,
-    quizData,
-    quizId,
-    quizData.find(function (el) {
-      return el._id == quizId;
-    })
-  );
 
-  let question = { question: "", options: [] };
+  let question, options;
 
   if (questions) {
-    question = questions[Number(questionIndex) - 1] ?? {};
+    question = questions[Number(currQuestion)]?.question;
+    options = questions[Number(currQuestion)]?.options;
   }
 
-  useEffect(() => {
-    if (state.answers.length === 0 && Number(questionIndex) !== 1) {
-      const recoveredData = JSON.parse(
-        sessionStorage.getItem("answerData") || "[]"
-      );
-      if (recoveredData.length === 0)
-        navigate(`/${quizId}/rules`, { replace: true });
-      dispatch({
-        type: "RECOVER_ANSWER_DATA",
-        payload: { sessionData: recoveredData },
-      });
-    }
-  }, []);
-
-  const dispatchQuizAnswer = (
-    activeButton,
-    dispatch,
-    questionIndex,
-    questions
-  ) => {
-    dispatch({
-      type: "ADD_QUESTION_DATA",
-      payload: { questionIndex, selectedOption: activeButton },
+  const nextHandler = () => {
+    quizDispatch({
+      type: SET_CURRQUE,
+      payload: { currQue: currQuestion + 1 },
     });
-    sessionStorage.setItem(
-      "answerData",
-      JSON.stringify([
-        ...JSON.parse(sessionStorage.getItem("answerData") || "[]"),
-        { questionIndex: questionIndex, selectedOption: activeButton },
-      ])
-    );
-
-    if (questionIndex === questions?.length)
-      navigate(`/${quizId}/result`, { replace: true });
-    else navigate(`/${quizId}/${Number(questionIndex) + 1}`, { replace: true });
-    setActiveButton(-1);
-
-    sessionStorage.removeItem("quiz-timer");
   };
 
+  const submitHandler = () => {
+    quizDispatch({
+      type: SET_ANSWERS,
+      payload: { selectedOption },
+    });
+    navigate("/result");
+  };
+
+  if (timerMin === 0 && timerSec === 0) {
+    submitHandler();
+  }
+
+  const formatNumber = (num) => (num < 10 ? "0" + num : num);
+
   return (
-    <main class="quiz-container">
-      <div class="card-vertical ques">
-        <h2 class="justify-center">{quizData.heading}</h2>
-        <div class="ques-and-score">
-          <div class="count">
-            <p class="tag">Question: </p>
-            <p class="tag-value">
-              {questionIndex} / {questions?.length}
+    <main className="quiz-container">
+      <div className="card-vertical ques">
+        <h2 className="justify-center">{myQuizData?.heading}</h2>
+        <div className="ques-and-score">
+          <div className="count">
+            <p className="tag">Question: </p>
+            <p className="tag-value">
+              {currQuestion + 1} / {questions?.length}
+            </p>
+          </div>
+          <div className="count">
+            <p className="tag-value">
+              {formatNumber(timerMin)} : {formatNumber(timerSec)}
             </p>
           </div>
         </div>
-        <div class="ques-and-ans mt-2">
-          <h3>{question?.question}</h3>
-          <div class="option-wrapper mb-2">
-            {question.options.map((el, index) => {
+        <div className="ques-and-ans mt-2">
+          <h3>{question}</h3>
+          <div className="option-wrapper mb-2">
+            {options?.map((el, index) => {
               return (
-                <div onClick={() => setActiveButton(index)}>
-                  <input type="radio" />
-                  <label
+                <div
+                  key={index}
+                  onClick={() => {
+                    selectedOption[currQuestion] = el;
+                    setSelectedOption([...selectedOption]);
+                  }}
+                >
+                  <li
                     className={`option ${
-                      index === Number(activeButton) ? " option-active" : ""
+                      selectedOption[currQuestion]?.value === el.value
+                        ? "option-active"
+                        : ""
                     }`}
                   >
                     {el.value}
-                  </label>
+                  </li>
                 </div>
               );
             })}
           </div>
         </div>
 
-        <a href="cosmos-five.html">
-          <button class="btn btn-primary">Next Question</button>
-        </a>
+        <button
+          className="btn btn-primary"
+          onClick={() =>
+            currQuestion + 1 === questions?.length
+              ? submitHandler()
+              : nextHandler()
+          }
+        >
+          {currQuestion + 1 === questions?.length ? "Submit" : "Next"}
+        </button>
       </div>
     </main>
   );

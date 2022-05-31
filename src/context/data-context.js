@@ -1,42 +1,72 @@
 import React, { createContext, useContext, useReducer } from "react";
+import { actionConstants } from "./actionConstants";
 
 const QuizContext = createContext({});
 
-const initialState = {
-  answers: [],
-};
-
 const QuizDataProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(
+  const [quizState, quizDispatch] = useReducer(
     function quizReducer(state, action) {
+      const { SET_CURRQUE, SET_ANSWERS, RESET, UPDATE_USER, START_QUIZ } =
+        actionConstants;
+
       switch (action.type) {
-        case "ADD_QUESTION_DATA":
+        case START_QUIZ: {
           return {
             ...state,
-            answers: state.answers.some(
-              (el) => el.questionIndex === action.payload.questionIndex
-            )
-              ? state.answers.map((el) => {
-                  return el.questionIndex === action.payload.questionIndex
-                    ? action.payload
-                    : el;
-                })
-              : [...state.answers, { ...action.payload }],
+            quizStarted: true,
           };
-        case "RECOVER_ANSWER_DATA":
+        }
+        case SET_CURRQUE: {
           return {
             ...state,
-            answers: [...action.payload.sessionData],
+            currQuestion: action.payload.currQue,
           };
-        case "RESET":
-          return { ...state, answers: [] };
+        }
+        case SET_ANSWERS: {
+          return {
+            ...state,
+            selectedOptions: [...action.payload.selectedOption],
+          };
+        }
+
+        case UPDATE_USER: {
+          console.log("update",action.payload);
+          return {
+            ...state,
+            totalScore: state.totalScore + action.payload.addScore,
+            quizzesAttempted: [
+              ...state.quizzesAttempted,
+              {
+                quizCategory: action.payload.addQuiz,
+                quizScore: action.payload.addScore,
+                quizPass: action.payload.quizPass,
+                quizId: action.payload.quizId,
+              },
+            ],
+          };
+        }
+        case RESET: {
+          return {
+            ...state,
+            currQuestion: 0,
+            selectedOptions: [],
+          };
+        }
+        default:
+          return state;
       }
     },
-    { answers: [] }
+    {
+      currQuestion: 0,
+      selectedOptions: [],
+      totalScore: 0,
+      quizzesAttempted: [],
+      quizStarted: false,
+    }
   );
 
   return (
-    <QuizContext.Provider value={{ state, dispatch }}>
+    <QuizContext.Provider value={{ quizState, quizDispatch }}>
       {children}
     </QuizContext.Provider>
   );
