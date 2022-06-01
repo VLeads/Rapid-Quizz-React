@@ -1,6 +1,6 @@
 import React from "react";
 import "./QuizCategory.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const QuizCategory = ({ cardData }) => {
   const { _id, heading, desc, src } = cardData;

@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Footer, Header, ProtectedRoute } from "components";
-import { useQuiz } from "context/data-context";
 import { Homepage, Login, Result, Rules, Signup } from "pages";
 import { Questions } from "pages/questions/Questions";
 

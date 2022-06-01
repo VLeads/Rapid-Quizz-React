@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./auth.css";
 import { toast } from "react-toastify";
@@ -13,7 +13,7 @@ export const Login = () => {
   const location = useLocation();
   const from = location?.state?.from.pathname || "/";
 
-  const { authLoading, setAuthLoading, user, setUser } = useAuth();
+  const { authLoading, setAuthLoading, setUser } = useAuth();
 
   const [error, setError] = useState("");
   const [inputType, setInputType] = useState("password");
