@@ -48,6 +48,7 @@
     border-bottom-right-radius: 4px;
     cursor: pointer;
     padding-top: 0.5rem;
+    padding-left: 0.5rem;
 }
 
 .password-eye-btn i {

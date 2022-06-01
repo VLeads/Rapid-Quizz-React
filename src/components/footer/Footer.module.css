@@ -1,14 +1,17 @@
 .footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
     padding-bottom: 2rem;
     text-align: center;
     border-top: 1px solid var(--grey)
 }
 
-.footer>a {
+.footer a {
     padding: 0 2rem
 }
 
-.footer>a>i {
+.footer a i {
     font-size: 3rem;
 }
 
@@ -16,6 +19,6 @@
     font-weight: 600
 }
 
-.footer>a>i:hover {
+.footer a i:hover {
     color: #383838
 }

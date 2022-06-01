@@ -71,7 +71,7 @@ export const Login = () => {
   ) : (
     <main className="auth-container">
       <form
-        className="card-vertical signup-form"
+        className="card-vertical signup-form theme-color"
         onSubmit={(e) => submitLoginHandler(e)}
       >
         <h3>Login</h3>
@@ -122,7 +122,7 @@ export const Login = () => {
           </div>
 
           <div className="select-box">
-            <label htmlFor="accept">
+            <label>
               <input type="checkbox" name="accept" />
               Remember me
             </label>
