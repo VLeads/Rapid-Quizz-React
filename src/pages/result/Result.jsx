@@ -4,7 +4,7 @@ import "./Result.css";
 import trophy from "assets/img/trophy.png";
 import { useQuiz } from "context/data-context";
 import { quizData } from "data/quiz-data";
-import { AlertIcon, CheckIcon, CrossIcon } from "assets/icons/icons";
+
 import { actionConstants } from "context/actionConstants";
 
 export const Result = () => {
