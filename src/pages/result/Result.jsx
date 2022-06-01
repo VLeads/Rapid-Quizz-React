@@ -70,8 +70,7 @@ export const Result = () => {
       <div className="quiz-container">
         {questions.map((questionGrp, currQuesId) => {
           return (
-            <div className="card-vertical ques" key={currQuesId}>
-              {/* <h2 class="justify-center">Cosmos</h2> */}
+            <div className="card-vertical ques theme-color" key={currQuesId}>
               <div className="ques-and-score">
                 <div className="count">
                   <p className="tag">Question: &nbsp;</p>

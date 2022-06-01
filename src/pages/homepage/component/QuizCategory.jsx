@@ -1,4 +1,5 @@
 import React from "react";
+import "./QuizCategory.css";
 import { Link, useNavigate } from "react-router-dom";
 
 export const QuizCategory = ({ cardData }) => {
@@ -12,8 +13,16 @@ export const QuizCategory = ({ cardData }) => {
   };
 
   return (
-    <div className="card-vertical" onClick={() => clickHandler(_id)}>
-      <img src={src} alt="pic" loading="lazy" />
+    <div
+      className="card-vertical theme-color"
+      onClick={() => clickHandler(_id)}
+    >
+      <img
+        src={src}
+        alt="pic"
+        loading="lazy"
+        style={{ objectFit: "cover", borderRadius: "8px" }}
+      />
       <div className="card-body">
         <h3 className="card-header">{heading}</h3>
         <p className="card-desc">{desc}</p>

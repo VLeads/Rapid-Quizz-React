@@ -19,7 +19,7 @@ export const Rules = () => {
 
   return (
     <main className="rules-main-container">
-      <div className="card-vertical rules-card">
+      <div className="card-vertical rules-card theme-color">
         <img src={ruleImg} alt="" />
         <h3 className="justify-center">Rules to be followed</h3>
         <ul className="rules-main">

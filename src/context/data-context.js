@@ -30,7 +30,6 @@ const QuizDataProvider = ({ children }) => {
         }
 
         case UPDATE_USER: {
-          console.log("update",action.payload);
           return {
             ...state,
             totalScore: state.totalScore + action.payload.addScore,

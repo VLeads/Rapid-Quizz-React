@@ -7,7 +7,7 @@ const Homepage = () => {
   return (
     <main className="quiz-main-container">
       <h2>
-        Unlocking knowledge at
+        Unlocking knowledge at &nbsp;
         <span className="font-family-kaushan">RAPID</span> speed !
       </h2>
       <p className="category-heading">Choose your quiz category</p>
