@@ -72,7 +72,7 @@ export const Signup = () => {
   ) : (
     <main className="auth-container">
       <form
-        className="card-vertical signup-form"
+        className="card-vertical signup-form theme-color"
         onSubmit={(e) => submitSignupHandler(e)}
       >
         <h3>Signup</h3>
