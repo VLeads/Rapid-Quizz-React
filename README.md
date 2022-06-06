@@ -14,7 +14,7 @@ Unlocking knowledge at RAPID speed !
 
 ## Features ?
 
-- Authentication
+- Authentication (using firebase)
   - Login
   - Logout
   - Signup
