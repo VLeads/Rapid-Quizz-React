@@ -80,3 +80,11 @@
     color: var(--white);
     pointer-events: none;
 }
+
+.next-btn {
+    display: flex;
+    width: 15rem;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}

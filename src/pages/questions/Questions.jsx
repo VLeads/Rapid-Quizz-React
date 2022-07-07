@@ -107,7 +107,7 @@ export const Questions = () => {
         </div>
 
         <button
-          className="btn btn-primary"
+          className="btn btn-primary next-btn"
           onClick={() =>
             currQuestion + 1 === questions?.length
               ? submitHandler()

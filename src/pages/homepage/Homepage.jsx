@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Homepage.css";
 import { QuizCategory } from "./component/QuizCategory";
 import { quizData } from "data/quiz-data";
+import { useQuiz } from "context/data-context";
+import { actionConstants } from "context/actionConstants";
 
 const Homepage = () => {
+  const { quizDispatch } = useQuiz();
+
+  const { RESET } = actionConstants;
+
+  useEffect(() => {
+    quizDispatch({
+      type: RESET,
+    });
+  }, []);
+
   return (
     <main className="quiz-main-container">
       <h2>

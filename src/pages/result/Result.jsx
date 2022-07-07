@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./Result.css";
 import trophy from "assets/img/trophy.png";
 import { useQuiz } from "context/data-context";
@@ -8,10 +8,14 @@ import { quizData } from "data/quiz-data";
 import { actionConstants } from "context/actionConstants";
 
 export const Result = () => {
+  const navigate = useNavigate();
   const {
     quizState: { selectedOptions, quizStarted },
     quizDispatch,
   } = useQuiz();
+
+  const { RESET } = actionConstants;
+
   const currQuiz = sessionStorage.getItem("currQuiz");
 
   const myQuizData = quizData.find((quiz) => quiz?._id === Number(currQuiz));
@@ -55,7 +59,12 @@ export const Result = () => {
 
   useEffect(() => {
     calcScore();
+    window.scrollTo(0, 0);
   }, []);
+
+  const homepageHandler = () => {
+    navigate("/");
+  };
 
   return (
     <main className="result-container">
@@ -67,6 +76,12 @@ export const Result = () => {
           {currTotal.current}/{questions.length * 10}
         </span>
       </h2>
+      <div className="extra-info">
+        <div className="option-missed q-info"></div>
+        <p className="q-info-label">
+          this color shows correct options that you missed*
+        </p>
+      </div>
       <div className="quiz-container">
         {questions.map((questionGrp, currQuesId) => {
           return (
@@ -93,6 +108,9 @@ export const Result = () => {
                           ? "option-correct"
                           : selectedOptions[currQuesId]?.value === option.value
                           ? "option-wrong"
+                          : selectedOptions[currQuesId]?.value !==
+                              option.value && option?.isCorrect
+                          ? "option-missed"
                           : ""
                       } `}
                     >
@@ -105,6 +123,10 @@ export const Result = () => {
           );
         })}
       </div>
+
+      <button className="btn btn-info" onClick={homepageHandler}>
+        Go Back to Homepage
+      </button>
     </main>
   );
 };
